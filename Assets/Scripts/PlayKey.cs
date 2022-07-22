@@ -65,9 +65,10 @@ public class PlayKey : MonoBehaviour
 
     IEnumerator alleMeineEntchen()
     {
-        keyC2.GetComponent<AudioSource>().Play();
+        StartCoroutine(HighlightAndCheckForKey(keyC2));
+        //keyC2.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(3f);
-        keyD.GetComponent<AudioSource>().Play();
+        StartCoroutine(HighlightAndCheckForKey(keyD));
         yield return new WaitForSeconds(3f);
         keyE2.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(3f);
@@ -196,5 +197,24 @@ public class PlayKey : MonoBehaviour
     public void playHanschenKlein()
     {
         StartCoroutine(hanschenKlein());
+    }
+
+    public IEnumerator HighlightAndCheckForKey(GameObject keyToPlay)
+    {
+        keyToPlay.GetComponent<AudioSource>().Play();
+        keyToPlay.transform.GetChild(1).gameObject.SetActive(true);
+        keyToPlay.transform.GetChild(0).gameObject.tag = "highlighted";
+        yield return new WaitForSeconds(3f);
+        if ((keyToPlay.transform.GetChild(0).name != "keyClicked" && keyToPlay.transform.GetChild(0).gameObject.tag == "highlighted")
+            || (keyToPlay.transform.GetChild(0).name == "keyClicked" && keyToPlay.transform.GetChild(0).gameObject.tag != "highlighted")
+            || (keyToPlay.transform.GetChild(0).name != "keyClicked" && keyToPlay.transform.GetChild(0).gameObject.tag != "highlighted")
+            )
+        {
+            keyToPlay.transform.GetChild(0).GetComponent<AudioSource>().Play();
+            yield return new WaitForSeconds(2f);
+        }
+        keyToPlay.transform.GetChild(1).gameObject.SetActive(!true);
+        keyToPlay.transform.GetChild(0).gameObject.tag = "PianoKey";
+        keyToPlay.transform.GetChild(0).name = "MovingKey";
     }
 }
