@@ -28,6 +28,7 @@ public class PlayKey : MonoBehaviour
     private GameObject keyA3;
     public GameObject applause;
     public GameObject done;
+    private int points;
 
 
 
@@ -55,6 +56,7 @@ public class PlayKey : MonoBehaviour
         keyF3 = GameObject.Find("F3");
         keyG3 = GameObject.Find("G3");
         keyA3 = GameObject.Find("A3");
+        points = 0;
  
 
         
@@ -66,59 +68,58 @@ public class PlayKey : MonoBehaviour
     IEnumerator alleMeineEntchen()
     {
         StartCoroutine(HighlightAndCheckForKey(keyC2));
-        //keyC2.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(3f);
         StartCoroutine(HighlightAndCheckForKey(keyD));
         yield return new WaitForSeconds(3f);
-        keyE2.GetComponent<AudioSource>().Play();
+        StartCoroutine(HighlightAndCheckForKey(keyE2));
         yield return new WaitForSeconds(3f);
-        keyF3.GetComponent<AudioSource>().Play();
+        StartCoroutine(HighlightAndCheckForKey(keyF3));
         yield return new WaitForSeconds(3f);
-        keyG.GetComponent<AudioSource>().Play();
+        StartCoroutine(HighlightAndCheckForKey(keyG));
         yield return new WaitForSeconds(3f);
-        keyG.GetComponent<AudioSource>().Play();
+        StartCoroutine(HighlightAndCheckForKey(keyG));
         yield return new WaitForSeconds(3f);
-        keyA2.GetComponent<AudioSource>().Play();
+        StartCoroutine(HighlightAndCheckForKey(keyA2));
         yield return new WaitForSeconds(3f);
-        keyA.GetComponent<AudioSource>().Play();
+        StartCoroutine(HighlightAndCheckForKey(keyA));
         yield return new WaitForSeconds(3f);
-        keyA3.GetComponent<AudioSource>().Play();
+        StartCoroutine(HighlightAndCheckForKey(keyA3));
         yield return new WaitForSeconds(3f);
-        keyA2.GetComponent<AudioSource>().Play();
+        StartCoroutine(HighlightAndCheckForKey(keyA2));
         yield return new WaitForSeconds(3f);
-        keyG.GetComponent<AudioSource>().Play();
+        StartCoroutine(HighlightAndCheckForKey(keyG));
         yield return new WaitForSeconds(3f);
-        keyA1.GetComponent<AudioSource>().Play();
+        StartCoroutine(HighlightAndCheckForKey(keyA1));
         yield return new WaitForSeconds(3f);
-        keyA.GetComponent<AudioSource>().Play();
+        StartCoroutine(HighlightAndCheckForKey(keyA));
         yield return new WaitForSeconds(3f);
-        keyA.GetComponent<AudioSource>().Play();
+        StartCoroutine(HighlightAndCheckForKey(keyA));
         yield return new WaitForSeconds(3f);
-        keyA3.GetComponent<AudioSource>().Play();
+        StartCoroutine(HighlightAndCheckForKey(keyA3));
         yield return new WaitForSeconds(3f);
-        keyG1.GetComponent<AudioSource>().Play();
+        StartCoroutine(HighlightAndCheckForKey(keyG1));
         yield return new WaitForSeconds(3f);
-        keyF.GetComponent<AudioSource>().Play();
+        StartCoroutine(HighlightAndCheckForKey(keyF));
         yield return new WaitForSeconds(3f);
-        keyF.GetComponent<AudioSource>().Play();
+        StartCoroutine(HighlightAndCheckForKey(keyF));
         yield return new WaitForSeconds(3f);
-        keyF2.GetComponent<AudioSource>().Play();
+        StartCoroutine(HighlightAndCheckForKey(keyF2));
         yield return new WaitForSeconds(3f);
-        keyF.GetComponent<AudioSource>().Play();
+        StartCoroutine(HighlightAndCheckForKey(keyF));
         yield return new WaitForSeconds(3f);
-        keyE3.GetComponent<AudioSource>().Play();
+        StartCoroutine(HighlightAndCheckForKey(keyE3));
         yield return new WaitForSeconds(3f);
-        keyE.GetComponent<AudioSource>().Play();
+        StartCoroutine(HighlightAndCheckForKey(keyE));
         yield return new WaitForSeconds(3f);
-        keyD.GetComponent<AudioSource>().Play();
+        StartCoroutine(HighlightAndCheckForKey(keyD));
         yield return new WaitForSeconds(3f);
-        keyD2.GetComponent<AudioSource>().Play();
+        StartCoroutine(HighlightAndCheckForKey(keyD2));
         yield return new WaitForSeconds(3f);
-        keyD2.GetComponent<AudioSource>().Play();
+        StartCoroutine(HighlightAndCheckForKey(keyD2));
         yield return new WaitForSeconds(3f);
-        keyD1.GetComponent<AudioSource>().Play();
+        StartCoroutine(HighlightAndCheckForKey(keyD1));
         yield return new WaitForSeconds(3f);
-        keyC.GetComponent<AudioSource>().Play();
+        StartCoroutine(HighlightAndCheckForKey(keyC));
         yield return new WaitForSeconds(3f);
         done.SetActive(true);
         applause.GetComponent<AudioSource>().Play();
@@ -141,58 +142,58 @@ public class PlayKey : MonoBehaviour
 
     IEnumerator hanschenKlein()
     {
-        keyG.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(3f);
-        keyE2.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(3f);
-        keyE1.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(3f);
-        keyF3.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(3f);
-        keyD.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(3f);
-        keyD2.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(3f);
-        keyC.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(3f);
-        keyD1.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(3f);
-        keyE3.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(3f);
-        keyF3.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(3f);
-        keyG2.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(3f);
-        keyG.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(3f);
-        keyG3.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(3f);
-        keyG2.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(3f);
-        keyE1.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(3f);
-        keyE2.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(3f);
-        keyF3.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(3f);
-        keyD.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(3f);
-        keyD1.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(3f);
-        keyC3.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(3f);
-        keyE.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(3f);
-        keyG1.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(3f);
-        keyG3.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(3f);
-        keyC2.GetComponent<AudioSource>().Play();
-        yield return new WaitForSeconds(3f);
-        done.SetActive(true);
-        applause.GetComponent<AudioSource>().Play();
+    StartCoroutine(HighlightAndCheckForKey(keyG));
+    yield return new WaitForSeconds(3f);
+    StartCoroutine(HighlightAndCheckForKey(keyE2));
+    yield return new WaitForSeconds(3f);
+    StartCoroutine(HighlightAndCheckForKey(keyE1));
+    yield return new WaitForSeconds(3f);
+    StartCoroutine(HighlightAndCheckForKey(keyF3));
+    yield return new WaitForSeconds(3f);
+    StartCoroutine(HighlightAndCheckForKey(keyD));
+    yield return new WaitForSeconds(3f);
+    StartCoroutine(HighlightAndCheckForKey(keyD2));
+    yield return new WaitForSeconds(3f);
+    StartCoroutine(HighlightAndCheckForKey(keyC));
+    yield return new WaitForSeconds(3f);
+    StartCoroutine(HighlightAndCheckForKey(keyD1));
+    yield return new WaitForSeconds(3f);
+    StartCoroutine(HighlightAndCheckForKey(keyE3));
+    yield return new WaitForSeconds(3f);
+    StartCoroutine(HighlightAndCheckForKey(keyF3));
+    yield return new WaitForSeconds(3f);
+    StartCoroutine(HighlightAndCheckForKey(keyG2));
+    yield return new WaitForSeconds(3f);
+    StartCoroutine(HighlightAndCheckForKey(keyG));
+    yield return new WaitForSeconds(3f);
+    StartCoroutine(HighlightAndCheckForKey(keyG3));
+    yield return new WaitForSeconds(3f);
+    StartCoroutine(HighlightAndCheckForKey(keyG2));
+    yield return new WaitForSeconds(3f);
+    StartCoroutine(HighlightAndCheckForKey(keyE1));
+    yield return new WaitForSeconds(3f);
+    StartCoroutine(HighlightAndCheckForKey(keyE2));
+    yield return new WaitForSeconds(3f);
+    StartCoroutine(HighlightAndCheckForKey(keyF3));
+    yield return new WaitForSeconds(3f);
+    StartCoroutine(HighlightAndCheckForKey(keyD));
+    yield return new WaitForSeconds(3f);
+    StartCoroutine(HighlightAndCheckForKey(keyD1));
+    yield return new WaitForSeconds(3f);
+    StartCoroutine(HighlightAndCheckForKey(keyC3));
+    yield return new WaitForSeconds(3f);
+    StartCoroutine(HighlightAndCheckForKey(keyE));
+    yield return new WaitForSeconds(3f);
+    StartCoroutine(HighlightAndCheckForKey(keyG1));
+    yield return new WaitForSeconds(3f);
+    StartCoroutine(HighlightAndCheckForKey(keyG3));
+    yield return new WaitForSeconds(3f);
+    StartCoroutine(HighlightAndCheckForKey(keyC2));
+    yield return new WaitForSeconds(3f);
+    done.SetActive(true);
+    applause.GetComponent<AudioSource>().Play();
 
-    }
+}
 
     public void playHanschenKlein()
     {
@@ -211,10 +212,12 @@ public class PlayKey : MonoBehaviour
             )
         {
             keyToPlay.transform.GetChild(0).GetComponent<AudioSource>().Play();
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(4f);
+            points += 1;
         }
         keyToPlay.transform.GetChild(1).gameObject.SetActive(!true);
         keyToPlay.transform.GetChild(0).gameObject.tag = "PianoKey";
         keyToPlay.transform.GetChild(0).name = "MovingKey";
     }
 }
+
