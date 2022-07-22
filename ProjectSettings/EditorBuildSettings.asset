@@ -6,14 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/switch_scene.unity
+    path: Assets/Scenes/switch_scene.unity
     guid: bb251a2c4310b9c4489ba20874d33b35
   - enabled: 1
-    path: Assets/piano_freestyle.unity
+    path: Assets/Scenes/piano_freestyle.unity
     guid: f1e2ed8ede3a23c4ab6da00cc901214d
   - enabled: 1
-    path: Assets/piano_learning.unity
+    path: Assets/Scenes/piano_learning.unity
     guid: 04bd642b37e54ae479f5f1e9c934af80
+  - enabled: 1
+    path: Assets/Scenes/piano_randomGenerator.unity
+    guid: 4579714c9155a37409e9192fd000a41f
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 875f48323f2f3614d988b331b3817484, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: c5554bdf89d23df489adf20ac47245f8, type: 2}

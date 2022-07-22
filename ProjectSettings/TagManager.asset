@@ -6,6 +6,9 @@ TagManager:
   tags:
   - ChangeScene
   - PianoKey
+  - PianoKeyAll
+  - Arrow
+  - test
   layers:
   - Default
   - TransparentFX
