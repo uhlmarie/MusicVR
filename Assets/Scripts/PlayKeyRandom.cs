@@ -23,7 +23,7 @@ public class PlayKeyRandom : MonoBehaviour
             keys[rn].GetComponent<AudioSource>().Play();
             keys[rn].transform.GetChild(1).gameObject.SetActive(true);
             keys[rn].transform.GetChild(0).gameObject.tag = "highlighted";
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(4f);
             if ((keys[rn].transform.GetChild(0).name != "keyClicked" && keys[rn].transform.GetChild(0).gameObject.tag == "highlighted") 
                 || (keys[rn].transform.GetChild(0).name == "keyClicked" && keys[rn].transform.GetChild(0).gameObject.tag != "highlighted") 
                 || (keys[rn].transform.GetChild(0).name != "keyClicked" && keys[rn].transform.GetChild(0).gameObject.tag != "highlighted")
@@ -36,6 +36,7 @@ public class PlayKeyRandom : MonoBehaviour
             Debug.Log("Layer should be default");
             keys[rn].transform.GetChild(0).name = "MovingKey";
             Debug.Log("Name should be Movingkey");
+            yield return new WaitForSeconds(5f);
 
         }
         yield return new WaitForSeconds(3f);

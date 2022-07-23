@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Microsoft.MixedReality.Toolkit.UI;
+using TMPro;
 
 public class PlayKey : MonoBehaviour
 {
@@ -27,8 +28,9 @@ public class PlayKey : MonoBehaviour
     private GameObject keyG3;
     private GameObject keyA3;
     public GameObject applause;
-    public GameObject done;
+    //public GameObject done;
     private int points;
+    public TMP_Text pointsText;
 
 
 
@@ -57,71 +59,75 @@ public class PlayKey : MonoBehaviour
         keyG3 = GameObject.Find("G3");
         keyA3 = GameObject.Find("A3");
         points = 0;
- 
 
         
 
-        done.SetActive(false);
- 
+
+        //done.SetActive(false);
+
+    }
+     void Update()
+    {
+        pointsText.SetText("Punkte: " + points);
     }
 
     IEnumerator alleMeineEntchen()
     {
         StartCoroutine(HighlightAndCheckForKey(keyC2));
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(HighlightAndCheckForKey(keyD));
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(HighlightAndCheckForKey(keyE2));
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(HighlightAndCheckForKey(keyF3));
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(HighlightAndCheckForKey(keyG));
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(HighlightAndCheckForKey(keyG));
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(HighlightAndCheckForKey(keyA2));
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(HighlightAndCheckForKey(keyA));
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(HighlightAndCheckForKey(keyA3));
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(HighlightAndCheckForKey(keyA2));
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(HighlightAndCheckForKey(keyG));
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(HighlightAndCheckForKey(keyA1));
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(HighlightAndCheckForKey(keyA));
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(HighlightAndCheckForKey(keyA));
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(HighlightAndCheckForKey(keyA3));
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(HighlightAndCheckForKey(keyG1));
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(HighlightAndCheckForKey(keyF));
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(HighlightAndCheckForKey(keyF));
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(HighlightAndCheckForKey(keyF2));
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(HighlightAndCheckForKey(keyF));
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(HighlightAndCheckForKey(keyE3));
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(HighlightAndCheckForKey(keyE));
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(HighlightAndCheckForKey(keyD));
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(HighlightAndCheckForKey(keyD2));
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(HighlightAndCheckForKey(keyD2));
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(HighlightAndCheckForKey(keyD1));
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         StartCoroutine(HighlightAndCheckForKey(keyC));
-        yield return new WaitForSeconds(3f);
-        done.SetActive(true);
+        yield return new WaitForSeconds(5f);
+        //done.SetActive(true);
         applause.GetComponent<AudioSource>().Play();
     }
 
@@ -131,7 +137,8 @@ public class PlayKey : MonoBehaviour
     }
 
     public void StopAllRoutines()
-    {
+    {   
+        GameObject.Find("MovingKey(1)").SetActive(false);
         var arrows = GameObject.FindGameObjectsWithTag("Arrow");
         foreach (var arrow in arrows)
         {
@@ -143,54 +150,54 @@ public class PlayKey : MonoBehaviour
     IEnumerator hanschenKlein()
     {
     StartCoroutine(HighlightAndCheckForKey(keyG));
-    yield return new WaitForSeconds(3f);
+    yield return new WaitForSeconds(5f);
     StartCoroutine(HighlightAndCheckForKey(keyE2));
-    yield return new WaitForSeconds(3f);
+    yield return new WaitForSeconds(5f);
     StartCoroutine(HighlightAndCheckForKey(keyE1));
-    yield return new WaitForSeconds(3f);
+    yield return new WaitForSeconds(5f);
     StartCoroutine(HighlightAndCheckForKey(keyF3));
-    yield return new WaitForSeconds(3f);
+    yield return new WaitForSeconds(5f);
     StartCoroutine(HighlightAndCheckForKey(keyD));
-    yield return new WaitForSeconds(3f);
+    yield return new WaitForSeconds(5f);
     StartCoroutine(HighlightAndCheckForKey(keyD2));
-    yield return new WaitForSeconds(3f);
+    yield return new WaitForSeconds(5f);
     StartCoroutine(HighlightAndCheckForKey(keyC));
-    yield return new WaitForSeconds(3f);
+    yield return new WaitForSeconds(5f);
     StartCoroutine(HighlightAndCheckForKey(keyD1));
-    yield return new WaitForSeconds(3f);
+    yield return new WaitForSeconds(5f);
     StartCoroutine(HighlightAndCheckForKey(keyE3));
-    yield return new WaitForSeconds(3f);
+    yield return new WaitForSeconds(5f);
     StartCoroutine(HighlightAndCheckForKey(keyF3));
-    yield return new WaitForSeconds(3f);
+    yield return new WaitForSeconds(5f);
     StartCoroutine(HighlightAndCheckForKey(keyG2));
-    yield return new WaitForSeconds(3f);
+    yield return new WaitForSeconds(5f);
     StartCoroutine(HighlightAndCheckForKey(keyG));
-    yield return new WaitForSeconds(3f);
+    yield return new WaitForSeconds(5f);
     StartCoroutine(HighlightAndCheckForKey(keyG3));
-    yield return new WaitForSeconds(3f);
+    yield return new WaitForSeconds(5f);
     StartCoroutine(HighlightAndCheckForKey(keyG2));
-    yield return new WaitForSeconds(3f);
+    yield return new WaitForSeconds(5f);
     StartCoroutine(HighlightAndCheckForKey(keyE1));
-    yield return new WaitForSeconds(3f);
+    yield return new WaitForSeconds(5f);
     StartCoroutine(HighlightAndCheckForKey(keyE2));
-    yield return new WaitForSeconds(3f);
+    yield return new WaitForSeconds(5f);
     StartCoroutine(HighlightAndCheckForKey(keyF3));
-    yield return new WaitForSeconds(3f);
+    yield return new WaitForSeconds(5f);
     StartCoroutine(HighlightAndCheckForKey(keyD));
-    yield return new WaitForSeconds(3f);
+    yield return new WaitForSeconds(5f);
     StartCoroutine(HighlightAndCheckForKey(keyD1));
-    yield return new WaitForSeconds(3f);
+    yield return new WaitForSeconds(5f);
     StartCoroutine(HighlightAndCheckForKey(keyC3));
-    yield return new WaitForSeconds(3f);
+    yield return new WaitForSeconds(5f);
     StartCoroutine(HighlightAndCheckForKey(keyE));
-    yield return new WaitForSeconds(3f);
+    yield return new WaitForSeconds(5f);
     StartCoroutine(HighlightAndCheckForKey(keyG1));
-    yield return new WaitForSeconds(3f);
+    yield return new WaitForSeconds(5f);
     StartCoroutine(HighlightAndCheckForKey(keyG3));
-    yield return new WaitForSeconds(3f);
+    yield return new WaitForSeconds(5f);
     StartCoroutine(HighlightAndCheckForKey(keyC2));
-    yield return new WaitForSeconds(3f);
-    done.SetActive(true);
+    yield return new WaitForSeconds(5f);
+    //done.SetActive(true);
     applause.GetComponent<AudioSource>().Play();
 
 }
@@ -205,15 +212,16 @@ public class PlayKey : MonoBehaviour
         keyToPlay.GetComponent<AudioSource>().Play();
         keyToPlay.transform.GetChild(1).gameObject.SetActive(true);
         keyToPlay.transform.GetChild(0).gameObject.tag = "highlighted";
-        yield return new WaitForSeconds(3f);
-        if ((keyToPlay.transform.GetChild(0).name != "keyClicked" && keyToPlay.transform.GetChild(0).gameObject.tag == "highlighted")
-            || (keyToPlay.transform.GetChild(0).name == "keyClicked" && keyToPlay.transform.GetChild(0).gameObject.tag != "highlighted")
-            || (keyToPlay.transform.GetChild(0).name != "keyClicked" && keyToPlay.transform.GetChild(0).gameObject.tag != "highlighted")
-            )
+        yield return new WaitForSeconds(2f);
+        if (keyToPlay.transform.GetChild(0).name == "keyClicked" && keyToPlay.transform.GetChild(0).gameObject.tag == "highlighted")
+        {
+            points += 1;
+
+        }
+        else
         {
             keyToPlay.transform.GetChild(0).GetComponent<AudioSource>().Play();
-            yield return new WaitForSeconds(4f);
-            points += 1;
+            yield return new WaitForSeconds(5f);            
         }
         keyToPlay.transform.GetChild(1).gameObject.SetActive(!true);
         keyToPlay.transform.GetChild(0).gameObject.tag = "PianoKey";
