@@ -1,50 +1,125 @@
 using System.Collections;
-using System.Collections.Generic;
+
+using System.Linq;
+
 using UnityEngine;
 
+
+
 public class PlayKeyRandom : MonoBehaviour
+
 {
-    // Start is called before the first frame update
+
     public GameObject[] keys;
+
     public GameObject applause;
+
+    public GameObject noKeyClicked;
+
+
 
 
 
     private void Start()
+
     {
+
         keys = GameObject.FindGameObjectsWithTag("PianoKeyAll");
 
     }
-    IEnumerator random()
+
+
+
+    private IEnumerator Random()
+
     {
-        for (int i = 0; i < keys.Length; i++)
+
+        //TODO: converted for i to foreach because index was never used.
+
+        foreach (var key in keys)
+
         {
-            int rn = Random.Range(0, keys.Length);
+
+            int rn = UnityEngine.Random.Range(0, keys.Length);
+
             keys[rn].GetComponent<AudioSource>().Play();
-            keys[rn].transform.GetChild(1).gameObject.SetActive(true);
-            keys[rn].transform.GetChild(0).gameObject.tag = "highlighted";
-            yield return new WaitForSeconds(4f);
-            if ((keys[rn].transform.GetChild(0).name != "keyClicked" && keys[rn].transform.GetChild(0).gameObject.tag == "highlighted") 
-                || (keys[rn].transform.GetChild(0).name == "keyClicked" && keys[rn].transform.GetChild(0).gameObject.tag != "highlighted") 
-                || (keys[rn].transform.GetChild(0).name != "keyClicked" && keys[rn].transform.GetChild(0).gameObject.tag != "highlighted")
-                )
+
+            //TODO: extracted to variables for better readability
+
+            var highlightedKeyOutline = keys[rn].transform.GetChild(1).gameObject;
+
+            var playableKey = keys[rn].transform.GetChild(0);
+
+
+
+            highlightedKeyOutline.SetActive(true);
+
+            //TODO: removed keyClicked name and only checked for tag. Also removed "highlighted" tag.
+
+            yield return new WaitForSeconds(6f);
+
+            //TODO: alle gedrückten Keys ermitteln
+
+            var clickedKeys = GameObject.FindGameObjectsWithTag("keyClicked");
+
+            if (!playableKey.CompareTag("keyClicked") && clickedKeys.Length > 0)
+
             {
-                keys[rn].transform.GetChild(0).GetComponent<AudioSource>().Play();
+
+                //Falsche Taste
+
+                playableKey.GetComponent<AudioSource>().Play();
+               
             }
-            keys[rn].transform.GetChild(1).gameObject.SetActive(!true);
-            keys[rn].transform.GetChild(0).gameObject.tag = "Untagged";
-            Debug.Log("Layer should be default");
-            keys[rn].transform.GetChild(0).name = "MovingKey";
-            Debug.Log("Name should be Movingkey");
-            yield return new WaitForSeconds(5f);
+
+            else if (!playableKey.CompareTag("keyClicked") && clickedKeys.Length == 0)
+
+            {
+
+                //TODO: zu langsam sound einfügen?
+                noKeyClicked.GetComponent<AudioSource>().Play();
+                Debug.Log("Too slow.");
+
+                //too slow
+
+            }
+
+
+            Debug.Log("now after conditionals");
+            highlightedKeyOutline.SetActive(!true);
+
+         
+
+            playableKey.gameObject.tag = "Untagged";
+
+            foreach (var clickedKey in clickedKeys)
+
+            {
+
+                clickedKey.tag = "Untagged";
+
+            }
+
+            yield return new WaitForSeconds(6f);
 
         }
-        yield return new WaitForSeconds(3f);
-        applause.GetComponent<AudioSource>().Play();
-    }
-    public void PlayRandom()
-    {
-        StartCoroutine(random());
-    }
-}
 
+
+
+        //yield return new WaitForSeconds(5f);
+
+        //applause.GetComponent<AudioSource>().Play();
+
+    }
+
+
+
+    public void PlayRandom()
+
+    {
+
+        StartCoroutine(Random());
+
+    }
+
+}
